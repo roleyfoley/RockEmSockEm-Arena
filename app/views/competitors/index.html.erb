@@ -1,0 +1,18 @@
+<section class="card bg-base-200 min-w-full" >
+  <div class="card-body">
+    <h1 class="card-title">Competitors</h1>
+
+    <ul id="competitors" class="list bg-base-100 rounded-box min-w-full" >
+      <% @competitors.each do |competitor| %>
+        <li class="list-row">
+          <div>
+            <h3><%= competitor.name %></h3>
+            <p class="text-xs uppercase font-semibold opacity-60"><%= competitor.instance_id %></p>
+          </div>
+          <div class="list-col-grow">
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>

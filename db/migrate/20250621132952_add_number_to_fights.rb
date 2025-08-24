@@ -1,0 +1,5 @@
+class AddNumberToFights < ActiveRecord::Migration[8.0]
+  def change
+    add_column :fights, :number, :integer
+  end
+end

@@ -1,0 +1,31 @@
+<section class="card bg-base-200 min-w-full" >
+  <div class="card-body">
+    <h1 class="card-title">Fights</h1>
+
+    <ul id="fights" class="list bg-base-100 rounded-box min-w-full" >
+      <% @fights.each do |fight| %>
+        <li class="list-row">
+          <div>
+            <h3><%= fight.name %></h3>
+          </div>
+          <div class="list-col-grow">
+            <% if fight.status == "pending"  %>
+              <div class="badge badge-info" >Starting Soon</div>
+            <% elsif fight.status == "in_progress" %>
+              <div class="badge badge-success">Running Now</div>
+            <% elsif fight.status == "finished" %>
+              <div class="badge badge-primary">Done</div>
+            <% else %>
+              <div class="badge badge-soft badge-error">Unknown</div>
+            <% end %>
+          </div>
+          <div>
+            <% if fight.status != "pending" %>
+              <%= link_to "Watch", @fight %>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
